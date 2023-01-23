@@ -10,6 +10,7 @@
 		0A9D5CDC297316400095CA94 /* FlagScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5CDB297316400095CA94 /* FlagScreen.swift */; };
 		0A9D5CDE297318140095CA94 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5CDD297318140095CA94 /* MainScreen.swift */; };
 		0A9D5CE029731AFE0095CA94 /* FlagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D5CDF29731AFE0095CA94 /* FlagItem.swift */; };
+		0AB551D9297DB66500B205CE /* testButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB551D8297DB66500B205CE /* testButton.swift */; };
 		0AE02EFC296DD11900A15D33 /* GuessTheFlagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02EFB296DD11900A15D33 /* GuessTheFlagApp.swift */; };
 		0AE02EFE296DD11900A15D33 /* GuessScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE02EFD296DD11900A15D33 /* GuessScreen.swift */; };
 		0AE02F00296DD11A00A15D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AE02EFF296DD11A00A15D33 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		0A9D5CDB297316400095CA94 /* FlagScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagScreen.swift; sourceTree = "<group>"; };
 		0A9D5CDD297318140095CA94 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		0A9D5CDF29731AFE0095CA94 /* FlagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagItem.swift; sourceTree = "<group>"; };
+		0AB551D8297DB66500B205CE /* testButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testButton.swift; sourceTree = "<group>"; };
 		0AE02EF8296DD11900A15D33 /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE02EFB296DD11900A15D33 /* GuessTheFlagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagApp.swift; sourceTree = "<group>"; };
 		0AE02EFD296DD11900A15D33 /* GuessScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessScreen.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				0A9D5CDF29731AFE0095CA94 /* FlagItem.swift */,
+				0AB551D8297DB66500B205CE /* testButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				0A9D5CDC297316400095CA94 /* FlagScreen.swift in Sources */,
 				0AE02EFE296DD11900A15D33 /* GuessScreen.swift in Sources */,
 				0A9D5CDE297318140095CA94 /* MainScreen.swift in Sources */,
+				0AB551D9297DB66500B205CE /* testButton.swift in Sources */,
 				0AE02EFC296DD11900A15D33 /* GuessTheFlagApp.swift in Sources */,
 				0A9D5CE029731AFE0095CA94 /* FlagItem.swift in Sources */,
 			);

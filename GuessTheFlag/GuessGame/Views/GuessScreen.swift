@@ -15,6 +15,8 @@ struct GuessScreen: View {
     @State private var scoreTitle = ""
     @State private var correctAnswer = Int.random(in: 0...2)
     @State private var countFlag = 0
+    @State private var rotationAmount = [0.0, 0.0, 0.0]
+    @State private var trackTappedNumber = 0
 
     var body: some View {
         ZStack {
@@ -47,12 +49,19 @@ struct GuessScreen: View {
                         Button {
                             flagTapped(number)
                             countFlag += 1
+
                         } label: {
                             Image(countries[number])
                                 .renderingMode(.original)
                                 .clipShape(Capsule())
                                 .shadow(color: .gray, radius: 5)
                         }
+                        //.controlSize(number != trackTappedNumber ? .small : .large)
+                        .rotation3DEffect(
+                            .degrees(self.rotationAmount[number]),
+                            axis: (x: 0, y: 1, z: 0)
+                        )
+                        .opacity(showingScore && number != trackTappedNumber ? 0.25 : 1)
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -88,6 +97,7 @@ struct GuessScreen: View {
             if countFlag == 8 {
                 scoreValue = 0
                 countFlag = 0
+                rotationAmount = [0.0, 0.0, 0.0]
             }
 
             scoreTitle = "Correct"
@@ -97,17 +107,29 @@ struct GuessScreen: View {
             if countFlag == 8 {
                 scoreValue = 0
                 countFlag = 0
+                rotationAmount = [0.0, 0.0, 0.0]
             }
 
             scoreTitle = "Wrong! That’s the flag of \(countries[number])"
             scoreValue -= 10
         }
         showingScore = true
+        withAnimation(.spring()) {
+            rotationAmount[number] += 360
+            trackTappedNumber = number
+        }
     }
 
     func askQuestion() {
         countries = countries.shuffled()
         correctAnswer = Int.random(in: 0...2)
+    }
+}
+
+struct ScaleButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 2 : 1)
     }
 }
 
