@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GuessScreen: View {
     @Binding var countries: [String]
+     var labels: [String: String]
 
     @State private var scoreValue = 0
     @State private var showingScore = false
@@ -44,6 +45,7 @@ struct GuessScreen: View {
                         Text(countries[correctAnswer])
                             .font(.largeTitle.weight(.semibold))
                     }
+                    .accessibilityElement(children: .combine)
 
                     ForEach(0 ..< 3) { number in
                         Button {
@@ -55,6 +57,7 @@ struct GuessScreen: View {
                                 .renderingMode(.original)
                                 .clipShape(Capsule())
                                 .shadow(color: .gray, radius: 5)
+                                .accessibilityLabel(labels[countries[number]] ?? "Unknown flag")
                         }
                         //.controlSize(number != trackTappedNumber ? .small : .large)
                         .rotation3DEffect(
@@ -135,6 +138,6 @@ struct ScaleButtonStyle: ButtonStyle {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        GuessScreen(countries: .constant([]))
+        GuessScreen(countries: .constant([]), labels: [:])
     }
 }
